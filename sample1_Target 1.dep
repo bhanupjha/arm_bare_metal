@@ -1,0 +1,7 @@
+Dependencies for Project 'sample1', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x4BB1C206)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I "C:\KeilARM\ARM\INC" -I "C:\KeilARM\ARM\INC\Philips" --list "Startup.lst" --xref -o "Startup.o" --depend "Startup.d")
+F (.\delay.c)(0x6A55E011)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I "C:\KeilARM\ARM\INC" -I "C:\KeilARM\ARM\INC\Philips" -o "delay.o" --omf_browse "delay.crf" --depend "delay.d")
+I (typedef.h)(0x6A55DEC2)
+F (.\rom_to_ram_attribute.c)(0x6A55E591)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I "C:\KeilARM\ARM\INC" -I "C:\KeilARM\ARM\INC\Philips" -o "rom_to_ram_attribute.o" --omf_browse "rom_to_ram_attribute.crf" --depend "rom_to_ram_attribute.d")
+I (delay_header.h)(0x6A55DFC9)
+I (typedef.h)(0x6A55DEC2)

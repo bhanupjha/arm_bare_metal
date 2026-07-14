@@ -1,0 +1,4 @@
+--cpu ARM7TDMI "startup.o" "delay.o" "rom_to_ram_attribute.o" --strict --scatter "sample1.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\sample1.map" -o "sample1.axf"
