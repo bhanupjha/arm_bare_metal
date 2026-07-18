@@ -1,0 +1,13 @@
+# Step 1: Block absolutely every file by default
+*
+
+# Step 2: Allow Git to look inside folders/subdirectories
+!*/
+
+# Step 3: Explicitly allow only your code files
+!*.c
+!*.h
+
+# Step 4: Allow Git to track the .gitignore file itself
+!.gitignore
+
