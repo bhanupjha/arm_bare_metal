@@ -1,1 +1,0 @@
-typedef.o: typedef.c
