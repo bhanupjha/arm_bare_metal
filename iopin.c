@@ -9,6 +9,6 @@ int main()
 	IOPIN0 &= (~(1<<0));
 
 	// write po.0 to po.30 as logic 0
-	// 2 pin 26 & 31 NA
+	// 2 pin-> 26 & 31 NA
 	IOPIN0 &= (~(0xffffffff<<0));
 }
