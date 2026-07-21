@@ -1,3 +1,4 @@
+//  toggling po.7 using IOPIN
 #include<lpc21xx.h>
 #include "delay_header.h"
 int main()
