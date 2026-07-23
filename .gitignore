@@ -1,28 +1,26 @@
-# Ignore build output
-Objects/
-Listings/
-*.bak
-*.crf
-*.d
-*.dep
-*.o
-*.axf
-*.hex
-*.lst
-*.map
+# Ignore everything
+*
 
-# Ignore user-specific settings
-*.uvopt
-*.uvoptx
+# Allow folders
+!*/
 
-# Track source code
+# Allow source files
 !*.c
 !*.h
 !*.s
 
-# Track Keil project files
+# Allow Keil project
 !*.uvproj
-!*.uvprojx
 
-# Track gitignore
+# Allow gitignore
 !.gitignore
+
+# Ignore Keil generated files
+*.uvgui.*
+*.build_log.htm
+*.htm
+*.lnp
+*.crf
+*.o
+*.d
+*.bak
