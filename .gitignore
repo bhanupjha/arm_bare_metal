@@ -1,13 +1,28 @@
-# Step 1: Block absolutely every file by default
-*
+# Ignore build output
+Objects/
+Listings/
+*.bak
+*.crf
+*.d
+*.dep
+*.o
+*.axf
+*.hex
+*.lst
+*.map
 
-# Step 2: Allow Git to look inside folders/subdirectories
-!*/
+# Ignore user-specific settings
+*.uvopt
+*.uvoptx
 
-# Step 3: Explicitly allow only your code files
+# Track source code
 !*.c
 !*.h
+!*.s
 
-# Step 4: Allow Git to track the .gitignore file itself
+# Track Keil project files
+!*.uvproj
+!*.uvprojx
+
+# Track gitignore
 !.gitignore
-
