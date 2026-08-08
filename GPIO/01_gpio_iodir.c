@@ -1,3 +1,11 @@
+/*
+ * File : 01_gpio_iodir.c
+ * Topic: GPIO - IODIR Register
+ * Description:
+ *   Demonstrates how to configure GPIO pins
+ *   as input and output using the IODIR0 register.
+ */
+
 #include<lpc21xx.h>
 int main()
 {

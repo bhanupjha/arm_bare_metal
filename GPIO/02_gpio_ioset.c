@@ -2,7 +2,7 @@
 int main()
 {
 	// write po.0 as logic 1
-	IOSET0 = 1<<0; // compund |&~ not reqd not reqd in IOSET reg bcz other bit not affect
+	IOSET0 = 1<<0; // compund |&~ not reqd in IOSET reg bcz other bit not affect
 
 	// write po.0 to po.7 as logic 1
 	IOSET0 = 0xff<<0;

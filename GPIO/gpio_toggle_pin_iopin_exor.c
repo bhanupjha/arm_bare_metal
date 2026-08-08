@@ -12,11 +12,5 @@ int main()
 
 		// delay 100 ms
 		delay_ms(100);
-
-		// write logic 0
-		IOPIN0 &= (~(1<<7));
-
-		// delay 100 ms
-		delay_ms(100);
 	}
 }

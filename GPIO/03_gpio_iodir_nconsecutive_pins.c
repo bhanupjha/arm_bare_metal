@@ -1,3 +1,11 @@
+/*
+ * File : 03_gpio_iodir_nconsecutive_pins.c
+ * Topic: GPIO - IODIR Register
+ * Description:
+ *   Demonstrates how to configure non consecutive GPIO pins
+ *   as input and output using the IODIR0 register.
+ */
+ 
 #include<lpc21xx.h>
 int main()
 {
