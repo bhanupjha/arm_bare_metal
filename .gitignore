@@ -12,6 +12,9 @@
 # Allow Keil project
 !*.uvproj
 
+#Allow Emulator files
+!*.DSN
+
 # Allow gitignore
 !.gitignore
 
