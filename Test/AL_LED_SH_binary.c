@@ -12,6 +12,7 @@
 
 #include<lpc21xx.h>
 #include "typedef.h"
+#include "delay_header.h"
 u32 sh(u32);
 int main()
 {
@@ -60,7 +61,7 @@ int main()
 				{
 					// turn off all AL_LED
 					IOSET0 = 0xFF;
-					
+		
 					// binary reresent on AL LED -> pin high
 					IOCLR0 = res2<<0;
 					
@@ -74,7 +75,7 @@ int main()
 					
 					// binary reresent on AL LED -> pin high
 					IOCLR0 = res3<<0;
-					
+				
 					// wait until switch released
 					while(((IOPIN0 >> SW4)&1)== 0);
 				}
