@@ -7,19 +7,19 @@
 
   <Targets>
     <Target>
-      <TargetName>LPC2129</TargetName>
+      <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
         <TargetCommonOption>
-          <Device>LPC2129</Device>
-          <Vendor>NXP</Vendor>
-          <Cpu>IRAM(0x40000000-0x40003FFF) IROM(0-0x3FFFF) CLOCK(12000000) CPUTYPE(ARM7TDMI)</Cpu>
-          <FlashUtilSpec>LPC210x_ISP.EXE ("#H" ^X $D COM1: 9600 1)</FlashUtilSpec>
+          <Device>LPC2148</Device>
+          <Vendor>NXP (founded by Philips)</Vendor>
+          <Cpu>IRAM(0x40000000-0x40007FFF) IROM(0-0x7FFFF) CLOCK(12000000) CPUTYPE(ARM7TDMI)</Cpu>
+          <FlashUtilSpec>LPC210x_ISP.EXE ("#H" ^X $D COM1: 38400 1)</FlashUtilSpec>
           <StartupFile>"STARTUP\Philips\Startup.s" ("Philips LPC2100 Startup Code")</StartupFile>
-          <FlashDriverDll>UL2ARM(-U40296420 -O7 -C0 -FO7 -FD40000000 -FC800 -FN1 -FF0LPC_IAP_256 -FS00 -FL03E000)</FlashDriverDll>
-          <DeviceId>3648</DeviceId>
-          <RegisterFile>LPC21xx.H</RegisterFile>
+          <FlashDriverDll>UL2ARM(-U268761108 -O7 -C0 -FO15 -FD40000000 -FC800 -FN1 -FF0LPC_IAP2_512 -FS00 -FL07D000)</FlashDriverDll>
+          <DeviceId>3880</DeviceId>
+          <RegisterFile>LPC214X.H</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -43,7 +43,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>LED</OutputName>
+          <OutputName>4_AL_R_to_L</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -99,11 +99,11 @@
           <SimDllName>SARM.DLL</SimDllName>
           <SimDllArguments>-cLPC2100</SimDllArguments>
           <SimDlgDll>DARMP.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pLPC21x9</SimDlgDllArguments>
+          <SimDlgDllArguments>-pLPC2148</SimDlgDllArguments>
           <TargetDllName>SARM.DLL</TargetDllName>
           <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TARMP.DLL</TargetDlgDll>
-          <TargetDlgDllArguments>-pLPC21x9</TargetDlgDllArguments>
+          <TargetDlgDllArguments>-pLPC2148</TargetDlgDllArguments>
         </DllOption>
         <DebugOption>
           <OPTHX>
@@ -127,7 +127,7 @@
           <Target>
             <UseTarget>0</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
+            <RunToMain>0</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
@@ -135,7 +135,7 @@
             <RestoreToolbox>1</RestoreToolbox>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>0</TargetSelection>
+          <TargetSelection>-1</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -149,20 +149,20 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>BIN\UL2ARM.DLL</Driver>
+            <Driver></Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
           <Flash1>
-            <UseTargetDll>1</UseTargetDll>
+            <UseTargetDll>0</UseTargetDll>
             <UseExternalTool>1</UseExternalTool>
             <RunIndependent>0</RunIndependent>
-            <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>1</Capability>
-            <DriverSelection>4096</DriverSelection>
+            <UpdateFlashBeforeDebugging>0</UpdateFlashBeforeDebugging>
+            <Capability>0</Capability>
+            <DriverSelection>-1</DriverSelection>
           </Flash1>
-          <Flash2>BIN\UL2ARM.DLL</Flash2>
-          <Flash3>"LPC210x_ISP.EXE" ("#H" ^X $D COM1: 9600 1)</Flash3>
+          <Flash2></Flash2>
+          <Flash3>LPC210x_ISP.EXE ("#H" ^X $D COM1: 38400 1)</Flash3>
           <Flash4></Flash4>
         </Utilities>
         <TargetArmAds>
@@ -263,12 +263,12 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x40000000</StartAddress>
-                <Size>0x4000</Size>
+                <Size>0x8000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x40000</Size>
+                <Size>0x80000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -293,7 +293,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x40000</Size>
+                <Size>0x80000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -318,7 +318,7 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x40000000</StartAddress>
-                <Size>0x4000</Size>
+                <Size>0x8000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -383,7 +383,7 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>LED</GroupName>
+          <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
               <FileName>Startup.s</FileName>
@@ -391,278 +391,14 @@
               <FilePath>.\Startup.s</FilePath>
             </File>
             <File>
-              <FileName>AL_LED.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\AL_LED.c</FilePath>
-            </File>
-            <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Common\delay.c</FilePath>
             </File>
             <File>
-              <FileName>4_AH_4_AL_LED.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\4_AH_4_AL_LED.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>4_AH_4AL.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\4_AH_4AL.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>8_AH_LED_R_to_L.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\8_AH_LED_R_to_L.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
               <FileName>8_AL_LED_R_to_L.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\8_AL_LED_R_to_L.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>8_AH_LED_L_to_R.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\8_AH_LED_L_to_R.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>8_AL_LED_L_to_R.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\8_AL_LED_L_to_R.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
+              <FilePath>..\LED\8_AL_LED_R_to_L.c</FilePath>
             </File>
           </Files>
         </Group>

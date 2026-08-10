@@ -5,7 +5,7 @@
 int main()
 {
 	// cfg po.8 as o/p
-	IODIR0 |= 1<<AL_LED;
+ 	IODIR0 |= 1<<AL_LED;
 	
 	while(1)
 	{
