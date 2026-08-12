@@ -1,4 +1,5 @@
-//Write an ECP to toggle Active low LED which is connected to the po.8 w.r.t 100 ms infinetly
+//Write an ECP to toggle Active low LED which is connected to the po.8 w.r.t 200 ms infinetly
+
 #define AL_LED 8;
 #include<lpc21xx.h>
 #include "delay_header.h"
