@@ -8,5 +8,6 @@ int main()
 	{
 		d[i]=s[i];
 	} 
+
 	while(1);
 }
