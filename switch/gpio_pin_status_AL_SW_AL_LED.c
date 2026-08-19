@@ -21,15 +21,10 @@ int main()
 			// Make pin high
 			IOCLR0 = 1<<AL_LED;
 		}
-			// delay_ms -> 500
-		//	delay_ms(500);
 		else
 		{
 			// Make pin low
 			IOSET0 = 1<<AL_LED;
-
-			// delay_ms -> 500
-			//delay_ms(500);
 		}
 	}
 }

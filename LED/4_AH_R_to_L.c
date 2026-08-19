@@ -8,15 +8,15 @@ int main()
 {
 	u32 i;
 	// cfg po.0 to po.3 AL_LED  as o/p
-	IODIR0 |= 15<<AL_LED_start_bit;
+	IODIR0 |= 15<<AH_LED_start_bit;
 	
 	// turn off all LED
-	IOCLR0 = 15<<AL_LED_start_bit;
+	IOCLR0 = 15<<AH_LED_start_bit;
 
 	while(1)
 	{
 	
-	for(i= AL_LED_start_bit; i<=3; i++)
+	for(i= AH_LED_start_bit; i<=3; i++)
 	{
 		// write i -> port pin one by one logic 1-> make pin high
 		IOSET0 = 1<<i;
