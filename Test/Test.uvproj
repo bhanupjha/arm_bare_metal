@@ -411,11 +411,6 @@
               <FilePath>.\Startup.s</FilePath>
             </File>
             <File>
-              <FileName>AL_LED_SH_binary.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\AL_LED_SH_binary.c</FilePath>
-            </File>
-            <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Common\delay.c</FilePath>
