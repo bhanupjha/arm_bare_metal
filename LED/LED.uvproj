@@ -45,7 +45,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>4_AL_L_to_R</OutputName>
+          <OutputName>SW</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -403,7 +403,7 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>LED</GroupName>
+          <GroupName>SW</GroupName>
           <Files>
             <File>
               <FileName>Startup.s</FileName>
@@ -416,9 +416,9 @@
               <FilePath>..\Common\delay.c</FilePath>
             </File>
             <File>
-              <FileName>4_AL_LED_L_to_R.c</FileName>
+              <FileName>gpio_pin_status_AL_SW_AL_LED.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\4_AL_LED_L_to_R.c</FilePath>
+              <FilePath>..\switch\gpio_pin_status_AL_SW_AL_LED.c</FilePath>
             </File>
           </Files>
         </Group>
