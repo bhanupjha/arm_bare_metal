@@ -18,13 +18,13 @@ int main()
 	
 	for(i= AL_LED_start_bit; i>=0; i--)
 	{
-		// write i -> port pin one by one logic 1-> make pin high
+		// make pin high
 		IOCLR0 = 1<<i;
 		
 		// delay-> 500 ms
 		delay_ms(500);
 		
-		// write i -> port pin one by one logic 0-> make pin low
+		// make pin low
 		IOSET0 = 15<<0;
 		
 		// delay-> 500 ms
