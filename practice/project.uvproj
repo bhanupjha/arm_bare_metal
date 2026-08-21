@@ -395,11 +395,6 @@
               <FileType>1</FileType>
               <FilePath>..\Common\delay.c</FilePath>
             </File>
-            <File>
-              <FileName>AH_SW_AH_LED_pin_status.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\switch\AH_SW_AH_LED_pin_status.c</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>

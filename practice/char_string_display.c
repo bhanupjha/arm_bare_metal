@@ -1,0 +1,1 @@
+// write an ECP to display on character on first line and string in middle of the second line
