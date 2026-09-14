@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>LPC2129</TargetName>
+      <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
@@ -45,7 +45,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>LCD</OutputName>
+          <OutputName>keypad</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -383,7 +383,7 @@
             </VariousControls>
           </Aads>
           <LDads>
-            <umfTarg>0</umfTarg>
+            <umfTarg>1</umfTarg>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
@@ -403,7 +403,7 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>LCD</GroupName>
+          <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
               <FileName>Startup.s</FileName>
@@ -411,19 +411,14 @@
               <FilePath>.\Startup.s</FilePath>
             </File>
             <File>
-              <FileName>LCD.c</FileName>
+              <FileName>kpm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\LCD.c</FilePath>
+              <FilePath>.\kpm.c</FilePath>
             </File>
             <File>
-              <FileName>LCD_test.c</FileName>
+              <FileName>kpm_test.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\LCD_test.c</FilePath>
-            </File>
-            <File>
-              <FileName>delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Common\delay.c</FilePath>
+              <FilePath>.\kpm_test.c</FilePath>
             </File>
           </Files>
         </Group>

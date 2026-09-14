@@ -1,18 +1,18 @@
 // LCD.c
 
 #include<lpc21xx.h>
-#include "types.h"
-#include "delay.h"
+#include "typedef.h"
+#include "delay_header.h"
 #include "LCD_defines.h"
 #include "defines.h"
 
 void WRITE_LCD_CMD(u8 cmd)
 {
 	// perform write operation (rw=0)
-	SCLRBIT(IOCLO, LCD_RW);
+	SCLRBIT(IOCLR0, LCD_RW);
 
 	// select command register (rs=0)
-	SCLRBIT(IOCLRO, LCD_RS);
+	SCLRBIT(IOCLR0, LCD_RS);
 
 	// write command to the data pins
 	WRITEBYTE(IOPIN0, LCD_DATA, cmd);
@@ -32,7 +32,7 @@ void WRITE_LCD_CMD(u8 cmd)
 void Init_LCD(void)
 {
 	// cfg p0.8 to p0.15 LCD data pin as o/p
-	WRITEBYTE(IODIR0, LCD_DATA, OXFF);
+	WRITEBYTE(IODIR0, LCD_DATA, 0XFF);
 
 	// cfg P0.16(rs), P0.17 (rw) and P0.18(en) as o/p
 	SETBIT(IODIR0, LCD_RS);
@@ -56,16 +56,17 @@ void Init_LCD(void)
 
 void WRITE_LCD_DATA(u8 ascii)
 {
-	SCL_BIT(IOCLR0, LCD_RW);
+	// perform write operation (RW=0)
+	SCLRBIT(IOCLR0, LCD_RW);
 
 	// select data register (rs=1)
-	SSET_BIT(IOSET0, LCD_RS);
+	SSETBIT(IOSET0, LCD_RS);
 
 	// write data on the data pins
 	WRITEBYTE(IOPIN0, LCD_DATA, ascii);
 
 	//apply H-L pulse on EN
-	SSET_BIT(IOSET0, LCD_EN); // EN=1
+	SSETBIT(IOSET0, LCD_EN); // EN=1
 
 	delay_us(1);
 
@@ -75,15 +76,15 @@ void WRITE_LCD_DATA(u8 ascii)
 	delay_ms(2);
 }
 
-void strLCD(s8* str)
+void strLCD(s8 *str)
 {
-	While(*str)
+	while(*str)
 	{
-		WRITE_LCD_DATA(*str++)
+		WRITE_LCD_DATA(*str++);
 	}
 }
 
-void u32 LCD(u32 n)
+void u32LCD(u32 n)
 {
 	u8 a[10];
 	s32 i=0;
@@ -105,26 +106,26 @@ void u32 LCD(u32 n)
 	}
 }
 
-void s32 LCD(s32 n)
+void s32LCD(s32 n)
 {
 	if(n<0)
 	{
 		WRITE_LCD_DATA('-');
 		n=-n;
 	}
-	u32 LCD(n);
+	u32LCD(n);
 }
 
-void f32 LCD(f32 fn, u8 nDP)
+void f32LCD(f32 fn, u8 nDP)
 {
-	u32 inum;
+	u32 inum, i;
 	if(fn<0)
 	{
 		WRITE_LCD_DATA('-');
 		fn =-fn;
 	}
 	inum=fn;
-	u32 LCD(inum);
+	u32LCD(inum);
 	WRITE_LCD_DATA('.');
 	for(i=0; i<nDP; i++)
 	{
@@ -132,4 +133,4 @@ void f32 LCD(f32 fn, u8 nDP)
 		inum=fn;
 		WRITE_LCD_DATA(inum+'0');
 	}
-} 
+}

@@ -1,0 +1,33 @@
+#include "LCD.h"
+#include "delay_header.h"
+#include "LCD_defines.h"
+
+int main()
+{
+	Init_LCD();
+	WRITE_LCD_CMD(GOTO_LINE1_POS0);
+	strLCD("LCD_TEST");
+	WRITE_LCD_CMD(GOTO_LINE2_POS0);
+	WRITE_LCD_DATA('A');
+	delay_ms(200);
+	WRITE_LCD_CMD(GOTO_LINE2_POS0);
+	WRITE_LCD_DATA(' ');
+	WRITE_LCD_CMD(GOTO_LINE2_POS0);
+	strLCD("Bhanu");
+	WRITE_LCD_CMD(GOTO_LINE2_POS0);
+	strLCD("     ");
+	WRITE_LCD_CMD(GOTO_LINE2_POS0);
+	u32LCD(12345);
+	delay_ms(200);
+	WRITE_LCD_CMD(GOTO_LINE2_POS0);
+	strLCD("     ");
+	WRITE_LCD_CMD(GOTO_LINE2_POS0);
+	s32LCD(-12345);
+	delay_ms(200);
+	WRITE_LCD_CMD(GOTO_LINE2_POS0);
+	strLCD("      ");
+	WRITE_LCD_CMD(GOTO_LINE2_POS0);
+	f32LCD(123.456,3);
+	WRITE_LCD_CMD(CLEAR_LCD);
+	while(1);
+}
