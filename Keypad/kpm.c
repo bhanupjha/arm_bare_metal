@@ -62,3 +62,20 @@ u32 keyscan(void)
 	while(!colscan());
 	return key;
 }
+
+u32 ReadNum(void)
+{
+	u8 key;
+	u32 sum = 0;
+	while(1)
+	{
+		key = keyscan();
+		if(key >= '0' && key <= '9')
+		{
+			sum = (sum*10) + (key-48);
+		}
+		else
+			break;
+	}
+	return sum;
+}
