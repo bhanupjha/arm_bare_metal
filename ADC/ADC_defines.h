@@ -18,12 +18,12 @@
 #define CH2 2
 #define CH3 3
 
-//ADDR
+//ADGDR
 #define RESULT 6
 #define DONE_BIT 31
 
 //AIN -> GPIO
 #define AIN0 0x00400000
 #define AIN1 0x01000000
-#define AIN2 0x01000000
+#define AIN2 0x04000000
 #define AIN3 0x10000000
