@@ -11,7 +11,7 @@ int main()
 	strLCD("ADC Test");
 	while(1)
 	{
-		Read_ADC(CH0, &dval, &eAR);
+		Read_ADC(CH1, &dval, &eAR);
 		WRITE_LCD_CMD(0XC0);
 		u32LCD(dval);
 		WRITE_LCD_DATA('=');

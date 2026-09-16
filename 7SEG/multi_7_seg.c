@@ -27,7 +27,7 @@ int main()
 	
 	for(i=0; i<100; i++)
 	{
-		for(dly=300; dly>0; dly--)
+		for(dly=200; dly>0; dly--)
 		{
 			WRITEBYTE(IOPIN0, CA_7SEG, segLUT[i/10]);
 			
