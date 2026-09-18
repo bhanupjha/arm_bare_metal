@@ -6,7 +6,7 @@
 int main()
 {
 	f32 tempc;
-	f32 tempF;
+//	f32 tempF;
 	
 	Init_LCD();
 	Init_ADC();
@@ -19,10 +19,10 @@ int main()
 		WRITE_LCD_DATA(0XDF);
 		WRITE_LCD_DATA('C');
 		
-		tempF = LM35tF();
-		WRITE_LCD_CMD(0XC8);
-		f32LCD(tempF, 2);
-		WRITE_LCD_DATA(0XDF);  // 0XDF -> degree
-		WRITE_LCD_DATA('F');
+		//tempF = LM35tF();
+	//	WRITE_LCD_CMD(0XC8);
+	//	f32LCD(tempF, 2);
+	//	WRITE_LCD_DATA(0XDF);  // 0XDF -> degree
+	//	WRITE_LCD_DATA('F');
 	}
 }

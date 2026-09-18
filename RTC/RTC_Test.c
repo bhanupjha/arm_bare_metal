@@ -13,13 +13,13 @@ int main()
 	Init_LCD();
 	
 	// set the initial time(hours, minute, seconds)
-	SET_RTC_Time_Info(10, 37, 0);
+	SET_RTC_Time_Info(12, 39, 0);
 	
 	// set the initial date (date, month, year)
-	SET_RTC_Date_Info(15, 9, 2026);
+	SET_RTC_Date_Info(18, 9, 2026);
 	
 	// set initial day (SUN to SAT)
-	SET_RTC_DAY(TUE);
+	SET_RTC_DAY(FRI);
 	
 	while(1)
 	{

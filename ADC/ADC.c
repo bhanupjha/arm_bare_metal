@@ -25,11 +25,8 @@ void Read_ADC(u32 chno, u32 *dval, f32 *eAR)
 	ADCR &= ~(255<<0);
 	
 	//select channel & start conversion
-<<<<<<< HEAD
-	ADCR |= ((1<<chno) | (1<<START_CONV));
-=======
 	ADCR |= 1<<chno | 1<<START_CONV;
->>>>>>> b431f5b (working on Sensor)
+
 	
 	//wait for 3us
 	delay_us(3);
@@ -43,5 +40,5 @@ void Read_ADC(u32 chno, u32 *dval, f32 *eAR)
 	
 	//find eAR value
 	*eAR = (3.3/1023)*(*dval);
-	delay_ms(3000);
+	//delay_ms(3000);
 }
