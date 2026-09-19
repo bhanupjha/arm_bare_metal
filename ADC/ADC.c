@@ -1,44 +1,34 @@
 //ADC.c
-
-#include<lpc21xx.h>
+#include <lpc21xx.h>
 #include "ADC_defines.h"
 #include "pin_connect_block.h"
 #include "delay_header.h"
-
 void Init_ADC(void)
 {
-	//make P0.27 to P0.30 as GPIO
-	PINSEL1 &= (~(3<<((28-16)*2)));
-	
-	//cfg P0.27 as AIN0
-	PINSEL1 |=(1<<((28-16)*2));// AIN1;
-	//Cfg_portpin(0,27,1);
-	//PINSEL1 |= 0x15400000; // P0.27 to P0.30 as AIN
-	
-	// select PDN_BIT and CLKDIV value
-	ADCR = ((1<<PDN_BIT) | (CLK_DIV_VALUE<<CLKDIV));
+	//make p0.27 to p0.30 as GPIO
+	PINSEL1&=~(255<<((27-16)*2));
+	//cfg p0.27 as AIN0(analog input pin)
+	PINSEL1|=AIN0;
+	//cfgportpin(0,27,1);
+	//PINSEL1|=0x15400000;//p0.27 to p0.30 as AIN
+	//cfg p0.28 as AIN1
+	PINSEL1|=AIN1;
+	ADCR=1<<PDN_BIT|CLK_DIV_VALUE<<CLKDIV;
 }
-
-void Read_ADC(u32 chno, u32 *dval, f32 *eAR)
+void Read_ADC(u32 chno,u32* dval, f32* eAR)
 {
 	//clear previous channel values
-	ADCR &= ~(255<<0);
-	
+	ADCR&=~(255<<0);
 	//select channel & start conversion
-	ADCR |= 1<<chno | 1<<START_CONV;
-
-	
-	//wait for 3us
+	ADCR|=1<<chno|1<<START_CONV;
+	//wait for 3usec
 	delay_us(3);
-	
 	//check the done bit status
 	while(((ADDR>>DONE_BIT)&1)==0);
-	//ADCR &=(~(1<<START_CONV));
-	
-	//extract 10 digital o/p
-	*dval = ((ADDR>>6)&1023);
-	
+	//stop conversion
+	ADCR&=~(1<<START_CONV);
+	//extract 10bit digital output
+	*dval= ((ADDR>>RESULT)&1023);
 	//find eAR value
-	*eAR = (3.3/1023)*(*dval);
-	//delay_ms(3000);
+	*eAR=(3.3/1023)*(*dval);
 }
