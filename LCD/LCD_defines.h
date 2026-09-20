@@ -1,8 +1,8 @@
 // LCD pin define
 #define LCD_DATA 8	 // po.8 to po.15
 #define LCD_RS 16    // po.16
-#define LCD_RW 18    // po.17
-#define LCD_EN 17   // po.18
+#define LCD_RW 17    // po.17
+#define LCD_EN 18   // po.18
 
 // LCD commands
 #define CLEAR_LCD 0x01
