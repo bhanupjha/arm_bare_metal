@@ -2,7 +2,7 @@
 #define CCLK (5*FOSC)
 #define PCLK (CCLK/4)
 
-#define PREINT_VAL ((int)(PCLK/32768)-1)
+#define PREINT_VAL ((int)(PCLK/32768)-1)	                             
 #define PREFRAC_VAL (PCLK-((PREINT_VAL+1)*32768))
 
 #define RTC_ENABLE (1<<0)
@@ -10,7 +10,7 @@
 
 #define RTC_CLKSRC (1<<4)
 
-#define CPU_LPC2129
+#define CPU_LPC2148
 
 #define SUN 0
 #define MON 1

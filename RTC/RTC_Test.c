@@ -1,16 +1,17 @@
 #include "RTC.h"
 #include "LCD.h"
-#include "RTC_defines.h"
+#include "defines.h"
 #include "typedef.h"
 
 s32 hour, min, sec, date, month, year, day;
 int main()
 {
-	// Initialize RTC
-	RTC_Init();
 	
 	// Initialize the LCD
 	Init_LCD();
+
+	// Initialize RTC
+	RTC_Init();
 	
 	// set the initial time(hours, minute, seconds)
 	SET_RTC_Time_Info(12, 39, 0);

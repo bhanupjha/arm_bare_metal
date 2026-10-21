@@ -22,7 +22,7 @@ void RTC_Init(void)
 	#else
 	
 	// Enable the RTC with external clock source
-	CCR = RTC_Enable | RTC_CLKSRC;  // LPC_2148
+	CCR = RTC_ENABLE | RTC_CLKSRC;  // LPC_2148
 	
 	#endif
 }
