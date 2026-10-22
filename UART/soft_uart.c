@@ -32,7 +32,7 @@ void soft_uart_TX(u8 sdat)
 	for(i=0; i<8; i++)
 	{
 		// LSB to MSB order via TXD_PIN
-		READWRITEBIT2(IOPIN0, sdat, TXD_PIN, i);
+		READWRITEBIT2(sdat, IOPIN0, i, TXD_PIN);
 
 		// 9600 baud i.e bit period
 		delay_us(BAUD);
@@ -60,7 +60,7 @@ u8 soft_uart_RX(void)
 		delay_us(BAUD);
 
 		// LSB to MSB order to store into rdat
-		READWRITEBIT2(rdat, i, IOPIN0, RXD_PIN);
+		READWRITEBIT2(IOPIN0, rdat, RXD_PIN, i);
 	}
 	// BAUD for stop bit
 	delay_us(BAUD);

@@ -1,3 +1,5 @@
+// bit banging version of uart protocol for serial transmission
+
 #include "soft_uart.h"
 #include "delay_header.h"
 
