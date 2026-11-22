@@ -1,7 +1,6 @@
-#include <lpc21xx.h>
-#include "ADC.h"
 
+#include "delay.h"
 int main()
 {
-	init_ADC();
+	dlys(2);
 }
