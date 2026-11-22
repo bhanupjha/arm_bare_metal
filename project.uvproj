@@ -445,19 +445,14 @@
               <FilePath>.\Startup.s</FilePath>
             </File>
             <File>
-              <FileName>LCD.c</FileName>
+              <FileName>ADC.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\project\Kitchen_Safety_Heat_and_Gas_Monitoring_System\LCD.c</FilePath>
+              <FilePath>.\practice\ADC.c</FilePath>
             </File>
             <File>
-              <FileName>timer0_delay.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\project\Kitchen_Safety_Heat_and_Gas_Monitoring_System\timer0_delay.c</FilePath>
-            </File>
-            <File>
-              <FileName>RTC_testing.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\RTC_testing.c</FilePath>
+              <FilePath>.\practice\main.c</FilePath>
             </File>
           </Files>
         </Group>
